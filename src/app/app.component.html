@@ -1,20 +1,58 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="header">
+  <img src="../assets/images/search_btn.png" class="search">
+  <input type="search" placeholder="搜索" ng-model="main.goodsName"
+         ng-model-options="{updateOn:'default blur',debounce : 1000}"
+         ng-change="main.getgoods(main.currentId, 'search')">
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
+<div class="content">
+  <div class="con_l">
+    <ul>
+      <!-- <li ng-repeat="type in main.allTypes" >
+         <button ng-disabled="type.isSelected" ng-click="main.getgoods(type.id,'changeType')" ng-class="{cur: type.isSelected}" ng-bind="type.name"></button>
+       </li>-->
+      <li *ngFor="let goodType of goodsTypes" (click)="onSelectGoodType(goodType)">
+        <button ng-class="{cur: type.isSelected}">{{goodType.name}}</button>
+      </li>
+    </ul>
+  </div>
+
+  <div class="con_r" infinite-scroll="">
+    <ol>
+      <li *ngFor="let goods of selectGoodsType " >
+        <div class="hz" (click)="onSelectGoods(goods)">
+          <img src="{{baseUrl}}{{goods.image}}">
+          <p class="p1">￥{{goods.price}}</p>
+          <p class="p2">{{goods.name}}</p>
+        </div>
+
+        <div *ngIf="goods.isShow"  class="mask">
+          <img src="../assets/images/delete_btn.png" (click)="deleteSelectedShop(goods)">
+          <p>{{goods.selectedCurrentGoodsNum}}</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</div>
+
+
+<div class="footer">
+  <div class="box">
+    <a ng-click="home.goGwc()">
+      <img src="../assets/images/shopcart.png" class="car">
+      <span *ngIf="isShowMarketNum">{{allSelectedGoodsNumber}}</span>
+    </a>
+  </div>
+  <div ng-if="home.toParentDatas.isSelectedShops.length">
+    <div class="box_price">
+      <p>￥<b>{{allPrice - allDiscountPrice |  number:'1.0-2'}}</b></p>
+    </div>
+
+    <div class="box_discount">
+      <span>￥<s>{{allPrice}}</s></span>
+      <p>优惠:<b>{{allDiscountPrice |  number:'1.0-2'}}</b></p>
+    </div>
+  </div>
+  <button class="btn" ng-click="home.Zfbpay();home.Wxpay();home.pay()">支付</button>
+</div>

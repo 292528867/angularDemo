@@ -1,0 +1,417 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+}
+
+.header,
+.content,
+.footer {
+  width: 100%;
+  background-color: #FFFFFF;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 777;
+}
+
+.header .search {
+  width: 5%;
+  position: absolute;
+  top: 15px;
+  left: 11%;
+}
+
+.header input {
+  width: 90%;
+  display: block;
+  margin: 8px auto;
+  outline: 0;
+  border: 0;
+  border-radius: 16px;
+  background-color: #F2F2F2;
+  font-size: 14px;
+  line-height: 32px;
+  text-align: left;
+  padding-left: 12%;
+}
+
+.content {
+  width: 100%;
+  margin-top: 49px;
+  background-color: #FFFFFF;
+  border-top: 1px solid #EFEFF4;
+  overflow: hidden;
+}
+
+.con_l {
+  width: 30%;
+  float: left;
+  background: #EFEFF4;
+  position: fixed;
+  left: 0;
+  top: 50px;
+}
+ul {
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  display: block;
+  width: 92%;
+  background: #FFFFFF;
+  text-align: center;
+}
+ul li button{
+  width: 100%;
+  height: 60px;
+  font-size: 20px;
+  color: #555555;
+  line-height: 60px;
+  border-radius: 0;
+  border:none;
+  background: #FFFFFF;
+  border-bottom: 1px solid #EEEEEE;
+}
+ul .cur {
+  background: #EFEFF4;
+  color: #ff6e16;
+}
+
+ul .cur:focus {
+  outline: none;
+}
+
+.place {
+  width: 92%;
+  height: 100px;
+  background: #FFFFFF;
+}
+
+.con_r {
+  margin-left: 30%;
+  width: 70%;
+  background-color: #fff;
+  float: left;
+// position: absolute;
+// right: 0;
+// top: 0;
+  border-top: 1px solid #EFEFF4;
+}
+
+.con_r ol {
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.con_r ol li {
+  position: relative;
+  display: block;
+  float: left;
+  width: 33%;
+  height: 150px;
+  border-right: 1px solid #EFEFF4;
+  border-bottom: 1px solid #EFEFF4;
+}
+
+.con_r ol li div:focus {
+  outline: none;
+}
+
+.con_r ol li .hz {
+  width: 100%;
+}
+
+.con_r ol li .hz img {
+  width: 100%;
+  height: 90px;
+  display: block;
+  margin: 15px auto;
+}
+
+.con_r ol li .hz p {
+  text-align: center;
+  font-size: 10px;
+  margin: 0px;
+}
+
+.con_r ol li .hz .p1 {
+  padding-top: 20px;
+}
+.con_r ol li .mask {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #666666;
+  opacity: 0.93;
+}
+
+.con_r ol li .mask p {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 56px;
+  color: #ffd200;
+  line-height: 150px;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  z-index: 11;
+}
+
+.con_r ol li .mask img {
+  width: 25%;
+  display: block;
+  margin-left: 65%;
+  position: absolute;
+  top: 10px;
+  right: 5%;
+  z-index: 666;
+}
+
+.footer {
+  width: 100%;
+  background: #FFFFFF;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0px -3px 22px #888888;
+}
+
+.footer div p {
+  margin: 0;
+}
+
+.footer .box {
+  float: left;
+  width: 20%;
+  height: 60px;
+  position: relative;
+}
+
+.footer .box a {
+  display: block;
+  position: relative;
+}
+
+.footer .box a .car {
+  width: 45%;
+  display: block;
+  margin-top: 14px;
+  margin-left: 25%;
+  position: absolute;
+  z-index: 50;
+}
+
+.footer .box a span {
+  display: block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  color: white;
+  background-color: #ff7c2d;
+  position: absolute;
+  top: 5px;
+  right: 15%;
+  z-index: 60;
+}
+
+.footer .box .num {
+  width: 30%;
+  display: block;
+  position: absolute;
+  z-index: 60;
+  top: 5px;
+  left: 50%;
+}
+
+.footer .box_price {
+  float: left;
+  width: 21%;
+  line-height: 60px;
+  font-size: 24px;
+  color: #5a5a5a;
+}
+
+.footer .box_discount {
+  float: left;
+  width: 20%;
+  height: 60px;
+  margin-left: 5%;
+}
+
+.footer .box_discount span {
+  display: block;
+  width: 100%;
+  line-height: 20px;
+  font-size: 12px;
+  color: #bbbbbb;
+// text-decoration: line-through;
+  margin-top: 10px;
+}
+
+.footer .box_discount p {
+  font-size: 14px;
+  color: #bbbbbb;
+  margin: 0;
+}
+
+.footer .btn {
+  padding: 0;
+  margin: 0;
+  width: 30%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #ff7c2d;
+  display: block;
+  float: right;
+  color: #FFFFFF;
+  font-size: 20px;
+  border: none;
+  border-radius: 0;
+}
+
+@media screen and (min-width:320px) {
+  .con_l{
+    position: fixed;
+    left: 0;
+    top: 50px;
+  }
+  .con_l ul li button{
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+  }
+  .con_r ol li {
+    height: 142px;
+  }
+  .con_r ol li .hz img {
+    width: 85%;
+    height: 80px;
+    margin: 10px auto;
+  }
+  .con_r ol li .hz p {
+    font-size: 9px;
+  }
+  .con_r ol li .hz .p1{
+    padding-top: 0px;
+  }
+  .con_r ol li .mask p {
+    line-height: 142px;
+  }
+  .footer .box a span{
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+  }
+}
+
+@media screen and (min-width:360px) {
+  .content {
+    margin-top: 50px;
+  }
+  .con_l ul li button{
+    height: 55px;
+    line-height: 55px;
+    font-size: 18px;
+  }
+  .con_r ol li{
+    height: 155px;
+  }
+  .con_r ol li .hz .p1 {
+    padding-top: 10px;
+  }
+  .con_r ol li .mask p {
+    line-height: 155px;
+  }
+  .footer .box a span{
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+  }
+}
+
+@media screen and (min-width:412px) {
+  .header input {
+    border-radius: 20px;
+    font-size: 16px;
+    line-height: 42px;
+  }
+  .content {
+    margin-top: 59px;
+  }
+  .con_l{
+    position: fixed;
+    left: 0;
+    top: 59px;
+  }
+  .con_l ul li button{
+    height: 56px;
+    line-height: 56px;
+    font-size: 18px;
+  }
+  .con_r ol li {
+    height: 165px;
+  }
+  .con_r ol li .hz img {
+    width: 80%;
+    margin: 12px auto;
+  }
+  .con_r ol li .hz .p1 {
+    padding-top: 10px;
+  }
+  .con_r ol li .mask p {
+    line-height: 165px;
+  }
+}
+
+@media screen and (min-width:414px) {
+  .header input {
+    border-radius: 20px;
+    font-size: 16px;
+    line-height: 42px;
+  }
+  .content {
+    margin-top: 59px;
+  }
+  .con_l{
+    position: fixed;
+    left: 0;
+    top: 59px;
+  }
+  .con_l ul li button{
+    height:65px;
+    line-height: 65px;
+    font-size: 19px;
+  }
+  .con_r ol li {
+    height: 165px;
+  }
+  .con_r ol li .hz img {
+    width: 80%;
+    margin: 13px auto;
+  }
+  .con_r ol li .hz .p1 {
+    padding-top: 15px;
+  }
+  .con_r ol li .mask p {
+    line-height: 165px;
+  }
+}
